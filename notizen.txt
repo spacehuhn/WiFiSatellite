@@ -1,0 +1,10 @@
+rufe fuer alle serial connections readmax auf
+	readmax speichert aktuellsten wert in datei
+	wenn readmax am ende ist, datei loeschen
+	wennn readmax den channel aendert, datei loeschen
+alle 1s
+	alle datein in verzeichniss, letzte zeile in array einlesen wenn ungleich end
+	max array anlegen
+	alle werte durchgehen und maxarraz fuellen
+	string von maxarray erstellen
+	erstellen string an alle serial connections zurueckschreiben
