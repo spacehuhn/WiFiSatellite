@@ -1,12 +1,17 @@
 #!/bin/bash
 
+echo "Starting..."
+
 # check arguments
 if [ $# -lt 1 ]; then
+	echo -n "Auto detecing UART devices..."
+
 	ports=$(ls /dev/ttyUSB[0-9]* 2> /dev/null | grep -oP [0-9]*$)
 
 	if [ ${#ports} -gt 0 ]
 	then
-			sudo ./max.sh $ports
+		echo "OK"
+		/bin/bash $PWD/syncmax.sh $ports
 	else
 		echo "No UART interfaces found"
 	fi
@@ -17,7 +22,7 @@ fi
 echo "Started"
 
 # close background tasks from last time
-sudo pkill -f readmax.sh
+#pkill -f readmax.sh
 
 # remove old files
 rm -rf "tmp_ch_values"
@@ -38,7 +43,8 @@ do
 	fi
 
 	# start reader
-	sudo nohup ./readmax.sh $var > /dev/null 2> /dev/null &
+	#echo "$var"
+	nohup ./readmax.sh "$var" > /dev/null 2> /dev/null &
 done
 
 # declare max data array
@@ -83,7 +89,7 @@ do
 	max_arr_str="setmax [${maxdata[0]},${maxdata[1]},${maxdata[2]},${maxdata[3]},${maxdata[4]}]"
 	#echo $max_arr_str
 
-	sudo ./write.sh $max_arr_str $@
+	/bin/bash $PWD/write.sh "$max_arr_str" $@
 	echo "$max_arr_str"
 	#echo "write.sh $max_arr_str $@"
 done

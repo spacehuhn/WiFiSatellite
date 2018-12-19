@@ -11,8 +11,8 @@ stty -F /dev/ttyUSB$1 ispeed 115200 ospeed 115200 -hupcl
 
 while true; do
 	while read -d $'\n' line < /dev/ttyUSB$1; do
-		#echo $line
-		echo $line | grep -oP '\[\K[^\]]+'
+		echo "$line"
+		#echo $line | grep -oP '\[\K[^\]]+'
 	done
 done
 

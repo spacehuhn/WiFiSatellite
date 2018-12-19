@@ -27,7 +27,7 @@ do
 		ch=$(echo $line | cut -c4-5)
 
 		# delete old file on channel change
-		if [ "$ch" != "$lastch" ]
+		if [ ! "$ch" = "$lastch" ]
 		then
 			if [ -f "tmp_ch_values/0$lastch" ]
 			then
@@ -36,6 +36,7 @@ do
 
 			lastch=$ch
 			touch "tmp_ch_values/0$ch"
+			echo "Changed channel to $ch"
 		fi
 
 		# get data from line
