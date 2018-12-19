@@ -1,3 +1,5 @@
+#!/bin/bash
+
 if [ $# -eq 0 ]; then
 	echo "missing parameter"
 	exit 0
@@ -13,3 +15,5 @@ while true; do
 		echo $line | grep -oP '\[\K[^\]]+'
 	done
 done
+
+exit 0

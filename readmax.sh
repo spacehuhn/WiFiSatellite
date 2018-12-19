@@ -1,33 +1,55 @@
+#!/bin/bash
+
+# check arguments
 if [ $# -lt 1 ]; then
 	echo "missing parameters"
 	exit 0
 fi
 
-# set serial connection options
-stty -F /dev/ttyUSB$1 ispeed 115200 ospeed 115200 -hupcl
+# create folder if not exists
+if [ ! -d "tmp_ch_values" ]
+then
+	mkdir "tmp_ch_values"
+fi
+
+# variable to save last channel
+declare -i ch=0
+declare -i lastch=0
 
 # read line
 while read -d $'\n' line < /dev/ttyUSB$1
 do
 	# check that line begins with max
 	beginning=$(echo $line | cut -c1-3)
-	if [ $beginning == "max" ]
+	if [ "$beginning" == "max" ]
 	then
 		# get channel
-		declare -i ch=$(echo $line | cut -c4-5)
-		#echo $ch
+		ch=$(echo $line | cut -c4-5)
+
+		# delete old file on channel change
+		if [ "$ch" != "$lastch" ]
+		then
+			if [ -f "tmp_ch_values/0$lastch" ]
+			then
+				rm "tmp_ch_values/0$lastch"
+			fi
+
+			lastch=$ch
+			touch "tmp_ch_values/0$ch"
+		fi
 
 		# get data from line
 		data=$(echo $line | grep -oP '\[\K[^\]]+')
 
-		# convert data to array
-		IFS=',' read -a array <<< $data
-
-		for index in "${!array[@]}"
-		do
-			declare "maxdata_$ch_$index"="${array[index]}"
-		done
+		# write data into file
+		echo "$data" > "tmp_ch_values/0$ch"
 	fi
 done
+
+# delete old file
+if [ ! "$lastch" == "0" ]
+then
+	rm "tmp_ch_values/0$lastch"
+fi
 
 exit 0
