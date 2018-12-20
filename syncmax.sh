@@ -1,5 +1,12 @@
 #!/bin/bash
 
+# run as root
+if [ "$EUID" -ne 0 ]
+then
+	sudo ./syncmax.sh $@
+  exit 0
+fi
+
 echo "Starting..."
 
 # check arguments

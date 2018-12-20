@@ -1,5 +1,12 @@
 #!/bin/bash
 
+# run as root
+if [ "$EUID" -ne 0 ]
+then
+	sudo ./synctime.sh $@
+  exit 0
+fi
+
 while true
 do
   echo "time $(date +%s)"
