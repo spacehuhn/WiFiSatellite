@@ -3,7 +3,8 @@
 # run as root
 if [ "$EUID" -ne 0 ]
 then
-	sudo ./write.sh $@
+	#sudo ./write.sh $@
+	echo "Please run as root"
   exit 0
 fi
 
@@ -16,6 +17,8 @@ then
 			./write.sh "$CMD"
 	done
 
+	exit 0
+	
 elif [  $# -lt 2  ]
 then
 		ports=$(ls /dev/ttyUSB[0-9]* 2> /dev/null | grep -oP [0-9]*$)
@@ -33,7 +36,8 @@ fi
 for var in "${@:2}"
 do
 	#stty -F /dev/ttyUSB$var ispeed 115200 ospeed 115200 -hupcl
-	echo $1 > /dev/ttyUSB$var
+	echo "$1" > /dev/ttyUSB$var
+	#echo "writing '$1' to /dev/ttyUSB$var"
 done
 
 exit 0

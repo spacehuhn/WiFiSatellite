@@ -60,6 +60,9 @@ declare -a maxdata=(0 0 0 0 0)
 # every second
 while sleep 1
 do
+	# reset all values
+	maxdata=(0 0 0 0 0)
+	
 	#echo "update"
 	# for all files in folder
 	FILES=./tmp_ch_values/*
@@ -96,7 +99,7 @@ do
 	max_arr_str="setmax [${maxdata[0]},${maxdata[1]},${maxdata[2]},${maxdata[3]},${maxdata[4]}]"
 	#echo $max_arr_str
 
-	/bin/bash $PWD/write.sh "$max_arr_str" $@
+	./write.sh "$max_arr_str" $@
 	echo "$max_arr_str"
 	#echo "write.sh $max_arr_str $@"
 done
