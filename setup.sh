@@ -27,6 +27,9 @@ do
 	# set up serial connection
 	stty -F /dev/ttyUSB$var ispeed 115200 ospeed 115200 -hupcl 2> /dev/null
 
+	# set ID
+	sudo ./write.sh "setid $var" "$var"
+
   if [ $? -ne 0 ]
   then
     echo -n "...ERROR, removing it now"
