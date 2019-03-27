@@ -1,0 +1,12 @@
+{
+    "name": "SimpleSetting",
+    "keywords": "simple,setting,settings,spacehuhn",
+    "description": "Load and stor settings in your Arduino project.",
+    "repository":
+    {
+        "type": "git",
+        "url": "https://github.com/spacehuhn/SimpleSetting.git"
+    },
+    "frameworks": "arduino",
+    "platforms": "*"
+}

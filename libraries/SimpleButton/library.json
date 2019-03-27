@@ -1,0 +1,12 @@
+{
+    "name": "SimpleButton",
+    "keywords": "simple,button,spacehuhn",
+    "description": "Manage buttons easily",
+    "repository":
+    {
+        "type": "git",
+        "url": "https://github.com/spacehuhn/SimpleButton.git"
+    },
+    "frameworks": "arduino",
+    "platforms": "*"
+}

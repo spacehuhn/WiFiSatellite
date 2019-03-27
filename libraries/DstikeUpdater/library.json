@@ -1,0 +1,19 @@
+{
+  "name": "DstikeUpdater",
+  "version": "1.0.0",
+  "keywords": "esp32, dstike, update, sd, oled",
+  "description": "ESP32 OLED SD Updater Library for DSTIKE Boards",
+  "repository":  {
+    "type": "git",
+    "url": "https://github.com/spacehuhn/DstikeUpdarer.git"
+  },
+  "authors":  [
+    {
+        "name": "Stefan Kremser, Spacehuhn",
+        "email": "arduinolib@spacehuhn.com",
+        "url": "https://spacehuhn.com"
+    }
+  ],
+  "frameworks": "arduino",
+  "platforms": "ESP32"
+}

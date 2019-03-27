@@ -1,0 +1,12 @@
+{
+    "name": "SimpleButton",
+    "keywords": "simple,menu,spacehuhn",
+    "description": "A library to create user interfaces with Arduino.",
+    "repository":
+    {
+        "type": "git",
+        "url": "https://github.com/spacehuhn/SimpleMenu.git"
+    },
+    "frameworks": "arduino",
+    "platforms": "*"
+}
