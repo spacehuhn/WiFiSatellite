@@ -14,10 +14,16 @@
 // DSTIKE ESP32 Wristband
 // #define SDA 17
 // #define SCL 16
+// #define BUTTON_UP 19
+// #define BUTTON_DOWN 5
+// #define BUTTON_SELECT 18
 
 // DSTIKE D-DUINO32 SD
 #define SDA 26
 #define SCL 27
+#define BUTTON_UP 32
+#define BUTTON_DOWN 25
+#define BUTTON_SELECT 33
 
 namespace simplemenu {
     class ConfigOLED: public Config {

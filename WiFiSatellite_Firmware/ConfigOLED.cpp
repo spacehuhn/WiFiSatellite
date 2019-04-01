@@ -3,8 +3,8 @@
 namespace simplemenu {
     ConfigOLED::ConfigOLED(bool flipped) {
         display = new DISPLAY_TYPE(I2C_ADDR, SDA, SCL);
-        
-        DstikeUpdater::run(*display, 19, 5, 18);
+
+        DstikeUpdater::run(*display, BUTTON_UP, BUTTON_DOWN, BUTTON_SELECT);
         
         display->init();
         display->setFont(DejaVu_Sans_Mono_12);
