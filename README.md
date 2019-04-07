@@ -4,7 +4,7 @@
 
 <p align="center">
 <b>Monitoring and logging 2.4GHz WiFi traffic</b><br>
-on all 14 simultaneously<br><br>
+on 14 channels simultaneously<br><br>
 <br>🐦 <a href="https://twitter.com/spacehuhn">Twitter</a>
 | 📺 <a href="https://www.youtube.com/spacehuhn">YouTube</a>
 | 🌍 <a href="https://spacehuhn.com">spacehuhn.com</a><br>
@@ -12,10 +12,6 @@ on all 14 simultaneously<br><br>
 Support this project and become a patron on <a href="https://patreon.com/spacehuhn">patreon.com/spacehuhn</a>.<br>
 Also available: <a href="https://www.tindie.com/products/Spacehuhn/spacehuhn-stickers/">Stickers</a></b>!
 </p>
-
-## Video
-
-![]()
 
 ## Hardware
 
@@ -41,8 +37,7 @@ Also available: <a href="https://www.tindie.com/products/Spacehuhn/spacehuhn-sti
 - [3D parts](rev2_2018/3d)
 - [Software](rev2_2018/WiFiSatellite_Firmware)
 
-![WiFi Satellite revision 2 Image 1](img/rev2_1.jpg)
-![WiFi Satellite revision 2 Image 2](img/rev2_2.jpg)
+![WiFi Satellite revision 2](img/rev2_1.jpg)
 ![WiFi Satellite Mini Image 1](img/mini_1.jpg)
 ![WiFi Satellite Mini Image 2](img/mini_2.jpg)
 
